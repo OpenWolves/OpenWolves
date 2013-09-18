@@ -19,7 +19,7 @@ public class OWCrafting
 	{		
 		GameRegistry.addRecipe(new RecipePile());
 		
-		OWRegistry.addShapedPileRecipe(Block.dirt.blockID, 4, new Object[] {"XRX", 'R', new ItemStack(Block.dirt)});
+		OWRegistry.addShapelessPileRecipe(Block.dirt.blockID, 4, new Object[] {new ItemStack(Block.dirt, 1)});
 	}
 
 	private static void addSmeltingRecipes()

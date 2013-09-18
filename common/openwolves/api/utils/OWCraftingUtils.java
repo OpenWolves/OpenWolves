@@ -43,9 +43,9 @@ public class OWCraftingUtils
 		}
 		
 		ShapelessRecipes shapelessrecipes = new ShapelessRecipes(par1ItemStack, arraylist);
-		List recipes = (List)ReflectionHelper.getPrivateValue(CraftingManager.class, null, new String[] {"recipes"});
+		//List recipes = (List)ReflectionHelper.getPrivateValue(CraftingManager.class, null, new String[] {"recipes"});
 		
-		recipes.add(shapelessrecipes);
+		//recipes.add(shapelessrecipes);
 		return shapelessrecipes;
 	}
 }
