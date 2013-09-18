@@ -1,7 +1,6 @@
 package openwolves.api.utils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -9,7 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapelessRecipes;
-import cpw.mods.fml.relauncher.ReflectionHelper;
 
 public class OWCraftingUtils 
 {
@@ -35,7 +33,7 @@ public class OWCraftingUtils
 			{
 				if (!(object1 instanceof Block))
 				{
-					throw new RuntimeException("Invalid shapeless recipy!");
+					throw new RuntimeException("Invalid shapeless recipe!");
 				}
 
 				arraylist.add(new ItemStack((Block)object1));
@@ -43,9 +41,8 @@ public class OWCraftingUtils
 		}
 		
 		ShapelessRecipes shapelessrecipes = new ShapelessRecipes(par1ItemStack, arraylist);
-		//List recipes = (List)ReflectionHelper.getPrivateValue(CraftingManager.class, null, new String[] {"recipes"});
 		
-		//recipes.add(shapelessrecipes);
+		CraftingManager.getInstance().getRecipeList().add(shapelessrecipes);
 		return shapelessrecipes;
 	}
 }
