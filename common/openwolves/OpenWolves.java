@@ -2,6 +2,9 @@ package openwolves;
 
 import net.minecraft.creativetab.CreativeTabs;
 import openwolves.configuration.OWBlocks;
+import openwolves.configuration.OWCrafting;
+import openwolves.configuration.OWItems;
+import openwolves.configuration.configfile.OWConfiguration;
 import openwolves.handlers.LocalizationHandler;
 import openwolves.proxy.CommonProxyOW;
 import openwolves.utils.CreativeTabsOW;
@@ -30,13 +33,19 @@ public class OpenWolves
 	public static CommonProxyOW proxy;
 
 	public static CreativeTabs tabOpenWolves;
+	public static String configPath;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		configPath = event.getModConfigurationDirectory() + "/openwolves/";
+		OWConfiguration.init(configPath);
+		
 		tabOpenWolves = new CreativeTabsOW(CreativeTabs.getNextID(), "tabOpenWolves");
 		
 		OWBlocks.init();
+		OWItems.init();
+		OWCrafting.init();
 		
         LocalizationHandler.loadLanguages();
 	}
