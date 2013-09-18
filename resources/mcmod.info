@@ -1,0 +1,13 @@
+[{
+    "modid": "OpenWolves",
+    "name": "Open Wolves",
+    "description": "A Forge mod.",
+    "version": "@VERSION@",
+    "mcversion": "@MCVERSION@",
+    "url": "",
+    "updateUrl": "",
+    "authors": [ "Adubbz", "Grom_PE" ],
+    "credits": "",
+    "logoFile": "/pack.png",
+    "screenshots": []
+}]
