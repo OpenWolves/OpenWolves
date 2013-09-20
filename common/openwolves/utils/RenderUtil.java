@@ -8,10 +8,10 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderUtil 
 {
-	  public static void renderIcon(Icon icon, double size, double z, float nx, float ny, float nz) 
-	  {
-		  renderIcon(icon, 0.0D, 0.0D, size, size, z, nx, ny, nz);
-	  }
+	public static void renderIcon(Icon icon, double size, double z, float nx, float ny, float nz) 
+	{
+		renderIcon(icon, 0.0D, 0.0D, size, size, z, nx, ny, nz);
+	}
 
 	public static void renderIcon(Icon icon, double xStart, double yStart, double xEnd, double yEnd, double z, float nx, float ny, float nz) 
 	{
@@ -39,7 +39,7 @@ public class RenderUtil
 
 		tessellator.draw();
 	}
-	
+
 	public static Icon getMissingIcon(ResourceLocation textureSheet) 
 	{
 		return ((TextureMap)Minecraft.getMinecraft().getTextureManager().getTexture(textureSheet)).getAtlasSprite("missingno");
