@@ -1,5 +1,6 @@
 package openwolves.items;
 
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -12,6 +13,12 @@ public class ItemPile extends Item
 	{
 		super(id);
 		setCreativeTab(OpenWolves.tabOpenWolves);
+	}
+	
+	@Override
+	public void registerIcons(IconRegister iconregister)
+	{
+		itemIcon = iconregister.registerIcon("openwolves:pileoutline");
 	}
 	
     @Override
