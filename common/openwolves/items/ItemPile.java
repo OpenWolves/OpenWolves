@@ -4,11 +4,14 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.Icon;
 import net.minecraft.util.StatCollector;
 import openwolves.OpenWolves;
 
 public class ItemPile extends Item
 {
+	private Icon pileoutline;
+	
 	public ItemPile(int id) 
 	{
 		super(id);
@@ -18,7 +21,13 @@ public class ItemPile extends Item
 	@Override
 	public void registerIcons(IconRegister iconregister)
 	{
-		itemIcon = iconregister.registerIcon("openwolves:pileoutline");
+		itemIcon = iconregister.registerIcon("openwolves:pile");
+		pileoutline = iconregister.registerIcon("openwolves:pileoutline");
+	}
+	
+	public Icon getPileOutline()
+	{
+		return pileoutline;
 	}
 	
     @Override
