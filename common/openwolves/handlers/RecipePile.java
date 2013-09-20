@@ -27,9 +27,11 @@ public class RecipePile implements IRecipe
             	ItemPile.addDefaultPileTags(itemstack);
             	NBTTagCompound pileTags = itemstack.getTagCompound().getCompoundTag("OW");
             	
-            	int pileBlockId = OWRegistry.pilerecipelist.get(r).getPileBlockId();
+            	int pileBlockId = OWRegistry.pilerecipelist.get(r).getPileBlockStack().itemID;
+            	int pileBlockMeta = OWRegistry.pilerecipelist.get(r).getPileBlockStack().getItemDamage();
             	
             	pileTags.setInteger("pileBID", pileBlockId);
+            	pileTags.setInteger("pileBMeta", pileBlockMeta);
             	
             	output = itemstack;
                 return true;
