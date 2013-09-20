@@ -2,8 +2,7 @@ package openwolves.configuration;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
-import openwolves.api.OWRegistry;
-import openwolves.handlers.RecipePile;
+import openwolves.api.piles.OWPileUtils;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class OWCrafting
@@ -18,14 +17,16 @@ public class OWCrafting
 
 	private static void addCraftingRecipes()
 	{		
-		GameRegistry.addRecipe(new RecipePile());
 	}
 	
 	private static void addPileRecipes()
-	{
-		OWRegistry.addShapelessPileRecipe(new ItemStack(Block.dirt, 4), new Object[] {new ItemStack(Block.dirt, 1)});
-		OWRegistry.addShapelessPileRecipe(new ItemStack(Block.sand, 4), new Object[] {new ItemStack(Block.sand, 1)});
-		OWRegistry.addShapelessPileRecipe(new ItemStack(Block.slowSand, 4), new Object[] {new ItemStack(Block.slowSand, 1)});
+	{    	
+		GameRegistry.addShapelessRecipe(OWPileUtils.createPileStack(Block.dirt.blockID, 4), new Object[] {new ItemStack(Block.dirt, 1)});
+		GameRegistry.addShapelessRecipe(OWPileUtils.createPileStack(Block.sand.blockID, 4), new Object[] {new ItemStack(Block.sand, 1)});
+		GameRegistry.addShapelessRecipe(OWPileUtils.createPileStack(Block.slowSand.blockID, 4), new Object[] {new ItemStack(Block.slowSand, 1)});
+		
+		//GameRegistry.addShapelessRecipe(new ItemStack(Block.sand, 1), new Object[] {OWPileUtils.createPileStack(Block.sand.blockID, 1), OWPileUtils.createPileStack(Block.sand.blockID, 1), OWPileUtils.createPileStack(Block.sand.blockID, 1), OWPileUtils.createPileStack(Block.sand.blockID, 1)});
+		//GameRegistry.addShapelessRecipe(new ItemStack(Block.slowSand, 1), new Object[] {OWPileUtils.createPileStack(Block.slowSand.blockID, 1), OWPileUtils.createPileStack(Block.slowSand.blockID, 1), OWPileUtils.createPileStack(Block.slowSand.blockID, 1), OWPileUtils.createPileStack(Block.slowSand.blockID, 1)});
 	}
 
 	private static void addSmeltingRecipes()

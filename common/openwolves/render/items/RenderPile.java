@@ -8,8 +8,9 @@ import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraftforge.client.IItemRenderer;
+import openwolves.api.piles.OWPileUtils;
 import openwolves.items.ItemPile;
-import openwolves.utils.RenderUtil;
+import openwolves.utils.RenderUtils;
 
 import org.lwjgl.opengl.GL11;
 
@@ -42,7 +43,7 @@ public class RenderPile implements IItemRenderer
 			GL11.glTranslated(-0.5D, -0.1D, 0.0D);
 		}
 
-		ItemStack pileBlockStack = pile.getCorrespondingPileBlockItemStack(item);
+		ItemStack pileBlockStack = OWPileUtils.getPileBlockFromPileStack(item);
 
 		if (pileBlockStack != null) 
 		{
@@ -55,7 +56,7 @@ public class RenderPile implements IItemRenderer
 
 			if (type.equals(IItemRenderer.ItemRenderType.INVENTORY)) 
 			{
-				RenderUtil.renderIcon(pileOutline, 16.0D, 0.0D, 0.0F, 0.0F, -1.0F);
+				RenderUtils.renderIcon(pileOutline, 16.0D, 0.0D, 0.0F, 0.0F, -1.0F);
 			} 
 			else 
 			{
@@ -69,7 +70,7 @@ public class RenderPile implements IItemRenderer
 
 			if (type.equals(IItemRenderer.ItemRenderType.INVENTORY)) 
 			{
-				RenderUtil.renderIcon(pileBlockIcon, 16.0D, 0.0D, 0.0F, 0.0F, -1.0F);
+				RenderUtils.renderIcon(pileBlockIcon, 16.0D, 0.0D, 0.0F, 0.0F, -1.0F);
 			} 
 			else 
 			{
@@ -85,7 +86,7 @@ public class RenderPile implements IItemRenderer
 
 		if (type.equals(IItemRenderer.ItemRenderType.INVENTORY))
 		{
-			RenderUtil.renderIcon(icon, 16.0D, 0.001D, 0.0F, 0.0F, -1.0F);
+			RenderUtils.renderIcon(icon, 16.0D, 0.001D, 0.0F, 0.0F, -1.0F);
 		}
 		else 
 		{

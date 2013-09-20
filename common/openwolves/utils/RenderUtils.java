@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.util.Icon;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderUtil 
+public class RenderUtils 
 {
 	public static void renderIcon(Icon icon, double size, double z, float nx, float ny, float nz) 
 	{
