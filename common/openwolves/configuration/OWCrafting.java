@@ -12,14 +12,20 @@ public class OWCrafting
 	{
 		addOreRegistration();
 		addCraftingRecipes();
+		addPileRecipes();
 		addSmeltingRecipes();
 	}
 
 	private static void addCraftingRecipes()
 	{		
 		GameRegistry.addRecipe(new RecipePile());
-		
-		OWRegistry.addShapelessPileRecipe(new ItemStack(Block.cloth.blockID, 4, 10), new Object[] {new ItemStack(Block.dirt, 1)});
+	}
+	
+	private static void addPileRecipes()
+	{
+		OWRegistry.addShapelessPileRecipe(new ItemStack(Block.dirt, 4), new Object[] {new ItemStack(Block.dirt, 1)});
+		OWRegistry.addShapelessPileRecipe(new ItemStack(Block.sand, 4), new Object[] {new ItemStack(Block.sand, 1)});
+		OWRegistry.addShapelessPileRecipe(new ItemStack(Block.slowSand, 4), new Object[] {new ItemStack(Block.slowSand, 1)});
 	}
 
 	private static void addSmeltingRecipes()
