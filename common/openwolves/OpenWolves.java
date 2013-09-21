@@ -1,10 +1,13 @@
 package openwolves;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
+import openwolves.configuration.OWBlockEffectiveness;
 import openwolves.configuration.OWBlocks;
 import openwolves.configuration.OWCrafting;
 import openwolves.configuration.OWItems;
 import openwolves.configuration.configfile.OWConfiguration;
+import openwolves.eventhanlders.PileDropEventHandler;
 import openwolves.handlers.LocalizationHandler;
 import openwolves.proxy.CommonProxyOW;
 import openwolves.utils.CreativeTabsOW;
@@ -46,6 +49,7 @@ public class OpenWolves
 		OWBlocks.init();
 		OWItems.init();
 		OWCrafting.init();
+		OWBlockEffectiveness.init();
 		
         LocalizationHandler.loadLanguages();
 	}
@@ -54,6 +58,8 @@ public class OpenWolves
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRendering();
+		
+		MinecraftForge.EVENT_BUS.register(new PileDropEventHandler());
 	}
 
 	@EventHandler

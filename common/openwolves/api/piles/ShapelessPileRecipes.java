@@ -1,4 +1,4 @@
-package openwolves.recipes;
+package openwolves.api.piles;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,9 +8,8 @@ import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
-import openwolves.api.piles.OWPileUtils;
 
-public class ShapelessRecipesPile implements IRecipe
+public class ShapelessPileRecipes implements IRecipe
 {
     /** Is the ItemStack that you get when craft the recipe. */
     private final ItemStack recipeOutput;
@@ -18,7 +17,7 @@ public class ShapelessRecipesPile implements IRecipe
     /** Is a List of ItemStack that composes the recipe. */
     public final List recipeItems;
 
-    public ShapelessRecipesPile(ItemStack par1ItemStack, List par2List)
+    public ShapelessPileRecipes(ItemStack par1ItemStack, List par2List)
     {
         this.recipeOutput = par1ItemStack;
         this.recipeItems = par2List;

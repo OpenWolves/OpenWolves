@@ -4,22 +4,27 @@ import net.minecraft.item.ItemStack;
 
 public class OWPileDrop 
 {
-	private ItemStack pileblockstack;
-	private int outputamount;
+	private ItemStack pilestack;
+	private ItemStack blocktodroppile;
 	
-	public OWPileDrop(ItemStack pileblockstack, int outputamount)
+	public OWPileDrop(ItemStack pilestack)
 	{
-		this.pileblockstack = pileblockstack;
-		this.outputamount = outputamount;
+		this(pilestack, new ItemStack(pilestack.itemID, 1, pilestack.getItemDamage()));
 	}
 	
-	public ItemStack getPileBlockStack()
+	public OWPileDrop(ItemStack pilestack, ItemStack blocktodroppile)
 	{
-		return this.pileblockstack;
+		this.pilestack = pilestack;
+		this.blocktodroppile = blocktodroppile;
 	}
 	
-	public int getOutputAmount()
+	public ItemStack getPileStack()
 	{
-		return this.outputamount;
+		return this.pilestack;
+	}
+	
+	public ItemStack getBlockToDropPile()
+	{
+		return this.blocktodroppile;
 	}
 }
