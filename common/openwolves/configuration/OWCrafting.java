@@ -30,8 +30,8 @@ public class OWCrafting
 		OWPileUtils.addShapelessPileRecipe(new ItemStack(Block.sand), new Object[] {OWPileUtils.createPileStack(Block.sand.blockID, 1), OWPileUtils.createPileStack(Block.sand.blockID, 1), OWPileUtils.createPileStack(Block.sand.blockID, 1), OWPileUtils.createPileStack(Block.sand.blockID, 1)});
 		OWPileUtils.addShapelessPileRecipe(new ItemStack(Block.slowSand), new Object[] {OWPileUtils.createPileStack(Block.slowSand.blockID, 1), OWPileUtils.createPileStack(Block.slowSand.blockID, 1), OWPileUtils.createPileStack(Block.slowSand.blockID, 1), OWPileUtils.createPileStack(Block.slowSand.blockID, 1)});
 	
-		OWRegistry.addPileDrop(OWPileUtils.createPileStack(Block.dirt.blockID, 4), new ItemStack(Block.dirt, 1));
-		OWRegistry.addPileDrop(OWPileUtils.createPileStack(Block.dirt.blockID, 4), new ItemStack(Block.grass, 1));
+		OWRegistry.addPileDrop(OWPileUtils.createPileStack(Block.dirt.blockID, 4, 0), Block.dirt.blockID, 0);
+		OWRegistry.addPileDrop(OWPileUtils.createPileStack(Block.dirt.blockID, 4, 0), Block.grass.blockID, 0);
 	}
 
 	private static void addSmeltingRecipes()

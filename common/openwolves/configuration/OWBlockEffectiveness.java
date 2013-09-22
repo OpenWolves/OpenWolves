@@ -23,8 +23,8 @@ public class OWBlockEffectiveness
 	
 	private static void addForcedMaterialToolRequirements()
 	{
-		OWRegistry.addForcedMaterialToolRequirement(Material.ground);
-		OWRegistry.addForcedMaterialToolRequirement(Material.grass);
+		//OWRegistry.addForcedMaterialToolRequirement(Material.ground);
+		//OWRegistry.addForcedMaterialToolRequirement(Material.grass);
 	}
 	
 	private static void forceMaterialsToRequireTool()
