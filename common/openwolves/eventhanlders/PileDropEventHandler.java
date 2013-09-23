@@ -17,7 +17,7 @@ public class PileDropEventHandler
 	@ForgeSubscribe
 	public void onBlockDrop(BlockEvent.HarvestDropsEvent event)
 	{
-		World world = event.world;
+		/*World world = event.world;
 		OWPileDropListEntry piledroplistentry = OWRegistry.piledroplist[event.block.blockID];
 		
 		if (!world.isRemote)
